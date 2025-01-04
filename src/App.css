@@ -1,0 +1,338 @@
+:root {
+  --primary-color: white;
+  --primary-label: black;
+  --secndary-label: white;
+  --white-ball: white;
+  --black-ball: black;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+  color: black;
+  scrollbar-width: none;
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* position: relative; */
+
+  nav {
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    padding: 10px;
+
+    #switch {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+    }
+
+    label {
+      display: block;
+      width: 50px;
+      height: 20px;
+      background: var(--primary-label);
+      border-radius: 100px;
+      position: relative;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    label::after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      border-radius: 70px;
+      background-color: var(--white-ball);
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      transition: 0.5s;
+    }
+
+    #switch:checked + label:after {
+      background-color: var(--black-ball);
+      left: calc(100% - 5px);
+      transform: translateX(-100%);
+    }
+
+    #switch:checked + label {
+      background-color: var(--secndary-label);
+    }
+
+    label:active:after {
+      width: 60px;
+    }
+  }
+
+  .more-about-elements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .element-info {
+      width: 120px;
+      height: 120px;
+      padding: 5px;
+      line-height: 30px;
+      box-shadow: 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24),
+        inset -1px 2px 11px rgba(0, 0, 0, 0.12),
+        inset -4px -5px 10px rgba(0, 0, 0, 0.24);
+      border-radius: 2px;
+    }
+    .element-number {
+      font-size: 20px;
+    }
+    .element-symbol {
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    main {
+      margin-top: 10px;
+      font-size: 12px;
+      height: 415px;
+      overflow: scroll;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+
+      header {
+        background-color: rgb(204, 204, 204) !important;
+        border-radius: 5px 5px 0 0;
+        padding: 2px 13px;
+      }
+
+      header,
+      p {
+        width: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 40px;
+        background-color: #f5f8fa;
+
+        span {
+          line-height: 15px;
+          margin-left: 10px;
+          text-align: right;
+          text-transform: capitalize;
+
+          .shells {
+            margin: 2px;
+          }
+
+          svg {
+            cursor: pointer;
+          }
+        }
+      }
+      p {
+        border-bottom: 1px solid #b1b2b2;
+        padding: 0px 13px;
+      }
+    }
+  }
+
+  .main-all-elements {
+    display: flex;
+    position: relative;
+    justify-content: center;
+
+    section {
+      position: absolute;
+      width: calc(10 * 3.5em - 45px);
+      z-index: 12;
+      margin: 20px;
+      padding: 0 10px 10px;
+      height: calc(3 * 3.5em);
+      overflow: hidden;
+
+      .names {
+        transform: translateX(calc(1 * 0 * 100%));
+
+        div {
+          width: 200px;
+        }
+      }
+    }
+
+    .elements {
+      display: grid;
+      grid-template-columns: repeat(18, 3em);
+      grid-template-rows: repeat(10, 3em);
+      padding: 20px;
+
+      .element {
+        padding: 3px;
+        line-height: 13px;
+        position: relative;
+        margin: 1px;
+        cursor: pointer;
+        transition: all 0.1s;
+        z-index: 99;
+        overflow: hidden;
+
+        .name {
+          font-size: 8.5px;
+        }
+
+        .mass {
+          display: none;
+        }
+
+        &:hover {
+          line-height: 16px;
+          height: 4em;
+          width: 4em;
+          z-index: 1;
+          margin-left: -15px;
+          margin-top: -15px;
+          padding: 10px;
+          border-radius: 5px;
+          box-shadow: 4px 4px 15px black;
+          z-index: 100;
+
+          .number {
+            font-size: 15px;
+            font-weight: 600;
+          }
+
+          .name {
+            font-size: 13px;
+          }
+
+          .mass {
+            display: block;
+            font-size: 12px;
+          }
+        }
+
+        h3 {
+          font-size: 14px;
+          font-weight: 500;
+        }
+        .number {
+          font-size: 12px;
+        }
+        p {
+          font-size: 9px;
+        }
+      }
+    }
+  }
+
+  .element-background {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+    color: white;
+
+    .element-details {
+      top: 0;
+      height: 100%;
+      width: 400px;
+      padding: 20px;
+      position: relative;
+      background-color: #28272fd8;
+
+      img {
+        background-blend-mode: blend-mode;
+      }
+
+      .cross {
+        position: absolute;
+        top: 35px;
+        right: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+.Element {
+  position: absolute;
+  top: 0;
+  background-color: #070a0e29;
+  width: 100%;
+  height: 100%;
+  z-index: 120;
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  section {
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: scroll;
+    scrollbar-width: none;
+
+    h1 {
+      margin: 15px 0;
+      font-size: 30px;
+    }
+
+    .text-div {
+      width: 100%;
+      height: 100%;
+
+      .text {
+        text-align: left;
+      }
+    }
+
+    .image {
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    table {
+      width: 100%;
+    }
+  }
+  .cross {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+iframe {
+  body {
+    scrollbar-width: thin !important;
+  }
+}
