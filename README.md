@@ -1,8 +1,26 @@
-# React + Vite
+# Periodic Table
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic and interactive Periodic Table built using **Vite**, **React**, and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Interactive periodic table with all elements and their details.
+- Responsive design for various screen sizes.
+- Searchable elements with detailed information.
+- Wikipedia links for each element for quick reference.
+- Dynamic element colors based on categories.
+
+## Tech Stack
+
+- **React**: JavaScript library for building user interfaces.
+- **Vite**: Next-generation front-end tool for faster builds and development.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Axios**: For fetching Wikipedia data dynamically.
+- **React Icons**: For using icons like chevron, cross, etc.
+
+## Setup and Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/Shreyan1729/Periodic_Table.git
