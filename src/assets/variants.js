@@ -1,3 +1,7 @@
+import logo from "./logo.png";
+
+export { logo };
+
 export const fadeIn = (direction, delay) => {
   return {
     hidden: {

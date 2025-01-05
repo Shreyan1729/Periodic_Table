@@ -11,7 +11,7 @@
   height: 100%;
   color: black;
   scrollbar-width: none;
-  overflow: scroll;
+  overflow: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -102,7 +102,7 @@
       header {
         background-color: rgb(204, 204, 204) !important;
         border-radius: 5px 5px 0 0;
-        padding: 2px 13px;
+        padding: 5px 13px !important;
       }
 
       header,
@@ -111,8 +111,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 40px;
         background-color: #f5f8fa;
+        padding: 5px 13px !important;
 
         span {
           line-height: 15px;
@@ -143,18 +143,30 @@
 
     section {
       position: absolute;
-      width: calc(10 * 3.5em - 45px);
+      width: calc(10 * 3em - 45px);
       z-index: 12;
       margin: 20px;
       padding: 0 10px 10px;
-      height: calc(3 * 3.5em);
+      height: calc(3 * 2.7em);
       overflow: hidden;
+      margin-left: 65px;
 
       .names {
         transform: translateX(calc(1 * 0 * 100%));
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(5, auto);
 
         div {
-          width: 200px;
+          padding: 1px 10px;
+          width: 90%;
+          margin-bottom: 1px;
+          cursor: pointer;
+          transition: all 0.1s;
+
+          &:hover {
+            filter: brightness(1.1);
+          }
         }
       }
     }
@@ -304,7 +316,7 @@
       }
     }
 
-    .image {
+    img {
       width: 100%;
       height: auto;
       margin-top: 20px;
@@ -334,5 +346,113 @@
 iframe {
   body {
     scrollbar-width: thin !important;
+  }
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 50% !important;
+  }
+}
+table {
+  border-collapse: collapse;
+  width: 100% !important;
+  margin: 20px 0;
+  border: 1px solid black;
+
+  tr {
+    td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: left;
+
+      &:nth-child(1) {
+        width: 40%;
+      }
+    }
+  }
+
+  th {
+    td {
+      width: 100%;
+      text-align: center !important;
+      padding: 15px;
+      font-size: 25px;
+    }
+  }
+}
+
+.alkali .alkali {
+  background-color: #eace5d !important;
+
+  &:not(.alkali) {
+    background-color: transparent !important;
+  }
+}
+.alkaline .alkaline {
+  background-color: #f1f165 !important;
+
+  &:not(.alkaline) {
+    background-color: transparent !important;
+  }
+}
+.transition .transition {
+  background-color: #fac5b7 !important;
+
+  &:not(.transition) {
+    background-color: transparent !important;
+  }
+}
+.lanthanide .lanthanide {
+  background-color: #e8d19c !important;
+
+  &:not(.lanthanide) {
+    background-color: transparent !important;
+  }
+}
+.actinide .actinide {
+  background-color: #f5ccda !important;
+
+  &:not(.actinide) {
+    background-color: transparent !important;
+  }
+}
+.nonmetal .nonmetal {
+  background-color: #81da81 !important;
+
+  &:not(.nonmetal) {
+    background-color: transparent !important;
+  }
+}
+.metalloid .metalloid {
+  background-color: #77c5b2 !important;
+
+  &:not(.metalloid) {
+    background-color: transparent !important;
+  }
+}
+.noble .noble {
+  background-color: #e5bde5 !important;
+
+  &:not(.noble) {
+    background-color: transparent !important;
+  }
+}
+.post-transition .post-transition {
+  background-color: #acdfec !important;
+
+  &:not(.post-transition) {
+    background-color: transparent !important;
+  }
+}
+.unknown .unknown {
+  background-color: white !important;
+
+  &:not(.unknown) {
+    background-color: transparent !important;
   }
 }
