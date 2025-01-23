@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-start !important;
+    padding: 15px 30px;
+
+    .right {
+      display: none !important;
+    }
+  }
+
+  .elements {
+    grid-template-columns: repeat(18, 48px) !important;
+    grid-template-rows: repeat(10, 45px) !important;
+  }
+}

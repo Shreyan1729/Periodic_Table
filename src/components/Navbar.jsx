@@ -53,7 +53,7 @@ const Navbar = ({ itemNameSelectedInNavbar, setItemNameSelectedInNavbar }) => {
         Periodic Table
       </h1>
       <div className="right">
-        <div className="search-bar">
+        {/* <div className="search-bar">
           <div className="container">
             <input
               ref={inputRef}
@@ -102,7 +102,7 @@ const Navbar = ({ itemNameSelectedInNavbar, setItemNameSelectedInNavbar }) => {
               )
             )}
           </div>
-        </div>
+        </div> */}
 
         <ul className="wrapper">
           <li

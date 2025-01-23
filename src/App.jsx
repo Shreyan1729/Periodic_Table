@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./style/App.css";
 import { Elements } from "./assets/elements";
 import { ImCross } from "react-icons/im";
 import { motion } from "motion/react";
@@ -9,6 +8,9 @@ import WikipediaSection from "./components/WikipediaSection";
 import ElementTable from "./components/ElementTable";
 import { categories } from "./assets/categories";
 import Navbar from "./components/Navbar";
+
+import "./style/App.css";
+import "./style/Responsive.css";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
